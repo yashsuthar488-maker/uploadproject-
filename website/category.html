@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Categories</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+
+    <div id="header"></div>
+    <!-- CATEGORY SECTION -->
+
+    <section class="container">
+
+        <h1 style="text-align:center; margin-bottom:40px;">
+            Car Categories
+        </h1>
+
+        <div class="card-grid">
+
+            <!-- SUV -->
+
+            <div class="card">
+
+                <img src="https://th.bing.com/th/id/OIP.SVpCqyC6eJaKzXWqOgInhAHaE1?w=263&h=180&c=7&r=0&o=7&dpr=1.4&pid=1.7&rm=3" alt="SUV Car">
+
+                <div class="card-content">
+
+                    <h2>SUV</h2>
+
+                    <p>
+                        Powerful and spacious cars perfect for family trips and long journeys.
+                    </p>
+
+                    <a href="product.html" class="btn">
+                        View Cars
+                    </a>
+
+                </div>
+
+            </div>
+
+            <!-- SEDAN -->
+
+            <div class="card">
+
+                <img src="https://th.bing.com/th/id/OIP.UyKZgogfy1_mikMZYD1WuAHaEK?w=285&h=180&c=7&r=0&o=7&dpr=1.4&pid=1.7&rm=3" alt="Sedan Car">
+
+                <div class="card-content">
+
+                    <h2>Sedan</h2>
+
+                    <p>
+                        Comfortable and stylish cars suitable for city and highway driving.
+                    </p>
+
+                    <a href="product.html" class="btn">
+                        View Cars
+                    </a>
+
+                </div>
+
+            </div>
+
+            <!-- LUXURY -->
+
+            <div class="card">
+
+                <img src="https://car-images.bauersecure.com/wp-images/3679/best-luxury-cars-2024.jpeg"width="40%" alt="Luxury Car">
+
+                <div class="card-content">
+
+                    <h2>Luxury</h2>
+
+                    <p>
+                        Premium luxury cars with advanced features and superior comfort.
+                    </p>
+
+                    <a href="product.html" class="btn">
+                        View Cars
+                    </a>
+
+                </div>
+
+            </div>
+
+            <!-- SPORTS -->
+
+            <div class="card">
+
+                <img src="https://th.bing.com/th/id/OIP.XMD6CZDQiJAxIZfnFYuDeAHaEK?w=290&h=180&c=7&r=0&o=7&dpr=1.4&pid=1.7&rm=3" alt="Sports Car">
+
+                <div class="card-content">
+
+                    <h2>Sports</h2>
+
+                    <p>
+                        High-performance sports cars for thrilling driving experiences.
+                    </p>
+
+                    <a href="product.html" class="btn">
+                        View Cars
+                    </a>
+
+                </div>
+
+            </div>
+
+            <!-- ELECTRIC -->
+
+            <div class="card">
+
+                <img src=https://th.bing.com/th/id/OIP.3WLOrLxCXko7_hdJXm3NUAHaE8?w=272&h=181&c=7&r=0&o=7&dpr=1.4&pid=1.7&rm=3 alt="Electric Car">
+
+                <div class="card-content">
+
+                    <h2>Electric</h2>
+
+                    <p>
+                        Eco-friendly electric cars with modern technology and efficiency.
+                    </p>
+
+                    <a href="product.html" class="btn">
+                        View Cars
+                    </a>
+
+                </div>
+
+            </div>
+
+            <!-- CONVERTIBLE -->
+
+            <div class="card">
+
+                <img src="https://th.bing.com/th/id/OIP.sSTUDoM7n_xKe2KEwqc7oQHaEo?w=265&h=180&c=7&r=0&o=7&dpr=1.4&pid=1.7&rm=3" alt="Convertible Car">
+
+                <div class="card-content">
+
+                    <h2>Convertible</h2>
+
+                    <p>
+                        Stylish open-roof cars perfect for vacations and premium rides.
+                    </p>
+
+                    <a href="product.html" class="btn">
+                        View Cars
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- FOOTER -->
+
+    <div id="footer"></div>
+    <script>
+        fetch('header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header').innerHTML = data;
+            });
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer').innerHTML = data;
+            });
+    </script>ś
+
+</body>
+
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Car Rental Hub</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div id="header">
+
+</div>
+
+<section class="hero">
+    <div>
+        <h1>Rent Premium Cars</h1>
+        <p>Best cars for best journeys</p>
+
+        <a href="product.html" class="btn">
+            Explore Cars
+        </a>
+    </div>
+</section>
+
+<section class="container">
+
+    <h2>Popular Cars</h2>
+
+    <div class="card-grid">
+
+        <div class="card">
+            <img src="https://tse1.mm.bing.net/th/id/OIP.HiDR7SUY5Y2pfVZ0UVb3QwHaE7?rs=1&pid=ImgDetMain&o=7&rm=3">
+
+            <div class="card-content">
+                <h3>BMW X5</h3>
+                <p>₹5000/day</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://th.bing.com/th/id/OIP.jPlQdKFg95E9FEv6HXgIBwHaE8?o=7rm=3&rs=1&pid=ImgDetMain&o=7&rm=3">
+
+            <div class="card-content">
+                <h3>Audi A6</h3>
+                <p>₹4500/day</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://www.topgear.com/sites/default/files/2021/11/Mercedes_C300D_0000.jpg" width="40%">
+
+            <div class="card-content">
+                <h3>Mercedes C-Class</h3>
+                <p>₹6000/day</p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<div id="footer">
+
+</div>
+
+<script src="js/script.js">
+  
+</script>
+<script>
+      fetch('header.html')
+    .then(response => response.text())
+    .then(data => {
+        document.getElementById('header').innerHTML = data;
+    });
+    fetch('footer.html')
+    .then(response => response.text())
+    .then(data => {
+        document.getElementById('footer').innerHTML = data;
+    });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Details</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div id="header"></div>
+
+<section class="container">
+
+    <div class="card">
+
+        <img src="https://images.prismic.io/carwow/585d8660-215c-4396-95a9-267473baa569_2018+BMW+X5+Front+3:4+Driving+1.jpg>" alt="BMW X5">
+
+        <div class="card-content">
+
+            <h1>BMW X5</h1>
+
+            <p>
+                Luxury SUV with premium comfort and advanced technology.
+            </p>
+
+            <h3>Price: ₹5000/day</h3>
+
+            <a href="cart.html" class="btn">
+                Add To Cart
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+<div id="footer"></div>
+<script>
+      fetch('header.html')
+    .then(response => response.text())
+    .then(data => {
+        document.getElementById('header').innerHTML = data;
+    });
+    fetch('footer.html')
+    .then(response => response.text())
+    .then(data => {
+        document.getElementById('footer').innerHTML = data;
+    });
+</script>
+</body>
+</html>

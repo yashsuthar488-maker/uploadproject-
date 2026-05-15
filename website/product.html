@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cars</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div id="header"></div>
+
+<section class="container">
+
+    <h1 style="text-align:center; margin-bottom:40px;">
+        Available Cars
+    </h1>
+
+    <div class="card-grid">
+
+        <div class="card">
+
+            <img src="https://images.prismic.io/carwow/585d8660-215c-4396-95a9-267473baa569_2018+BMW+X5+Front+3:4+Driving+1.jpg" width="40%" alt="BMW X5">
+
+            <div class="card-content">
+
+                <h2>BMW X5</h2>
+
+                <p>₹5000/day</p>
+
+                <a href="product-details.html" class="btn">
+                    View Details
+                </a>
+
+            </div>
+
+        </div>
+
+        <div class="card">
+
+            <img src="https://th.bing.com/th/id/OIP.Njta9fVt5adV8jT4WE4GoQHaE8?w=290&h=193&c=7&r=0&o=7&dpr=1.4&pid=1.7&rm=3" alt="Audi A6">
+
+            <div class="card-content">
+
+                <h2>Audi A6</h2>
+
+                <p>₹4500/day</p>
+
+                <a href="product-details.html" class="btn">
+                    View Details
+                </a>
+
+            </div>
+
+        </div>
+
+        <div class="card">
+
+            <img src="https://wallpaperaccess.com/full/2383413.jpg" width="40%" alt="Mercedes C-Class">
+
+            <div class="card-content">
+
+                <h2>Mercedes C-Class</h2>
+
+                <p>₹6000/day</p>
+
+                <a href="product-details.html" class="btn">
+                    View Details
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<div id="footer"></div>
+<script>
+      fetch('header.html')
+    .then(response => response.text())
+    .then(data => {
+        document.getElementById('header').innerHTML = data;
+    });
+    fetch('footer.html')
+    .then(response => response.text())
+    .then(data => {
+        document.getElementById('footer').innerHTML = data;
+    });
+</script>
+
+</body>
+</html>
