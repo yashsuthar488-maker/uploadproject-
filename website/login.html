@@ -14,28 +14,17 @@
 
     <form>
 
-        <input type="email" placeholder="Email">
+        <input type="email" placeholder="Email" required>
 
-        <input type="password" placeholder="Password">
+        <input type="password" placeholder="Password" required>
 
-        <button>Login</button>
+        <button><a href="./index.html">Login</a></button>
 
     </form>
 
 </div>
 <div id="footer"></div>
-<script>
-      fetch('header.html')
-    .then(response => response.text())
-    .then(data => {
-        document.getElementById('header').innerHTML = data;
-    });
-    fetch('footer.html')
-    .then(response => response.text())
-    .then(data => {
-        document.getElementById('footer').innerHTML = data;
-    });
-</script>
+<script src="main.js"></script>
 
 </body>
 </html>

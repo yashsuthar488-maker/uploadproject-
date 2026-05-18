@@ -17,40 +17,139 @@
 
     <div class="card">
 
-        <img src="https://images.prismic.io/carwow/585d8660-215c-4396-95a9-267473baa569_2018+BMW+X5+Front+3:4+Driving+1.jpg>" alt="BMW X5">
+        <img id="product-image" src="" alt="">
 
         <div class="card-content">
 
-            <h1>BMW X5</h1>
+            <h1 id="product-title"></h1>
 
-            <p>
-                Luxury SUV with premium comfort and advanced technology.
-            </p>
+            <p id="product-description"></p>
 
-            <h3>Price: ₹5000/day</h3>
+            <h3 id="product-price"></h3>
 
-            <a href="cart.html" class="btn">
+            <button id="add-to-cart" class="btn">
                 Add To Cart
-            </a>
+            </button>
 
         </div>
 
     </div>
-
+    
 </section>
 
 <div id="footer"></div>
 <script>
-      fetch('header.html')
-    .then(response => response.text())
-    .then(data => {
-        document.getElementById('header').innerHTML = data;
-    });
-    fetch('footer.html')
-    .then(response => response.text())
-    .then(data => {
-        document.getElementById('footer').innerHTML = data;
-    });
+  var products = {
+    'bmw-x5': {
+      title: 'BMW X5',
+      image: 'https://images.prismic.io/carwow/585d8660-215c-4396-95a9-267473baa569_2018+BMW+X5+Front+3:4+Driving+1.jpg',
+      alt: 'BMW X5',  
+      description: 'Luxury SUV with premium comfort and advanced technology.',
+      price: '₹5000/day',
+    },
+    'audi-a6': {
+      title: 'Audi A6',
+      image: 'https://wallpapercat.com/w/full/9/9/d/1677978-3840x2160-desktop-4k-audi-a6-background-image.jpg',
+      alt: 'Audi A6',
+      description: 'Executive sedan with sporty handling and modern features.',
+      price: '₹4500/day'
+    },
+    'mercedes-c-class': {
+      title: 'Mercedes C-Class',
+      image: 'https://wallpaperaccess.com/full/2383413.jpg',
+      alt: 'Mercedes C-Class',
+      description: 'Premium compact luxury with elegant design and comfort.',
+      price: '₹6000/day'
+    },
+    'lamborghini-huracan': {
+      title: 'Lamborghini Huracan',
+      image: 'https://tse1.mm.bing.net/th/id/OIP.GhIZmSFgogkw2Ssce-dwGgHaEK?rs=1&pid=ImgDetMain&o=7&rm=3',
+      alt: 'Lamborghini Huracan',
+      description: 'Supercar with razor-sharp performance and exotic Italian styling.',
+      price: '₹25000/day'
+    },
+    'mustang-gt': {
+      title: 'Mustang GT',
+      image: 'https://wallpaperbat.com/img/9759406-mustang-gt-wallpaper-for-desktop-pc.jpg',
+      alt: 'Mustang GT',
+      description: 'Iconic muscle car with a loud V8 and pure driving excitement.',
+      price: '₹12000/day'
+    },
+    'rolls-royce-ghost': {
+      title: 'Rolls-Royce Ghost',
+      image: 'https://www.hdcarwallpapers.com/download/rolls_royce_ghost_extended_2021_5k-1920x1080.jpg',
+      alt: 'Rolls-Royce Ghost',
+      description: 'Ultra-luxury limousine with serene comfort and handcrafted details.',
+      price: '₹45000/day'
+    },
+    'pagani-huayra': {
+      title: 'Pagani Huayra',
+      image: 'https://wallpaperaccess.com/full/2572189.jpg',
+      alt: 'Pagani Huayra',
+      description: 'Extreme hypercar with bespoke carbon fiber artistry and speed.',
+      price: '₹55000/day'
+    },
+    'land-rover-defender': {
+      title: 'Land Rover Defender',
+      image: 'https://images.ctfassets.net/c9t6u0qhbv9e/2WIosuyN4wMlYv2hVw4cXH/a6094d1c00fb45c75db57bbdb07fa8d2/2024_Land_Rover_Defender.jpg',
+      alt: 'Land Rover Defender',
+      description: 'Rugged SUV built for family trips and long road journeys.',
+      price: '₹4000/day'
+    }
+  };
+
+  function loadTemplate(url, elementId) {
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', url, true);
+    xhr.onload = function() {
+      if (xhr.status === 200) {
+        document.getElementById(elementId).innerHTML = xhr.responseText;
+      }
+    };
+    xhr.send(); 
+  }
+
+  loadTemplate('header.html', 'header');
+  loadTemplate('footer.html', 'footer');
+
+  var params = new URLSearchParams(window.location.search);
+  var productId = params.get('id') || 'bmw-x5';
+  var product = products[productId] || products['bmw-x5'];
+  var cartKey = 'carRentalCart';
+
+  document.getElementById('product-image').src = product.image;
+  document.getElementById('product-image').alt = product.alt;
+  document.getElementById('product-title').innerText = product.title;
+  document.getElementById('product-description').innerText = product.description;
+  document.getElementById('product-price').innerText = 'Price: ' + product.price;
+
+  function loadCart() {
+    var text = localStorage.getItem(cartKey);
+    if (text) {
+      return JSON.parse(text);
+    }
+    return [];
+  }
+
+  function saveCart(cart) {
+    localStorage.setItem(cartKey, JSON.stringify(cart));
+  }
+
+  document.getElementById('add-to-cart').onclick = function() {
+    var cart = loadCart();
+    var found = false;
+    for (var i = 0; i < cart.length; i++) {
+      if (cart[i].id === productId) {
+        found = true;
+        break;
+      }
+    }
+    if (!found) {
+      cart.push({ id: productId, days: 1 });
+      saveCart(cart);
+    }
+    window.location.href = 'cart.html';
+  };
 </script>
 </body>
 </html>

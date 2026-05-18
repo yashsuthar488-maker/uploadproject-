@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faq's</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div id="header">
+    </div>
+        <div class="faq-container">
+            <h1>StreetTalks Cars Hub - FAQ</h1>
+
+            <div class="faq">
+                <div class="question" onclick="toggleAnswer(0)">
+                    1. What are the rental timings?
+                </div>
+                <div class="answer">
+                    StreetTalks Cars Hub is open from 9:00 AM to 9:00 PM every day.
+                </div>
+            </div>
+
+            <div class="faq">
+                <div class="question" onclick="toggleAnswer(1)">
+                    2. Do you offer personal training sessions?
+                </div>
+                <div class="answer">
+                    Yes, professional personal trainers are available for all members.
+                </div>
+            </div>
+
+            <div class="faq">
+                <div class="question" onclick="toggleAnswer(2)">
+                    3. What is the rental fee?
+                </div>
+                <div class="answer">
+                    Rental plans start from ₹2000 per day.
+                </div>
+            </div>
+
+            <div class="faq">
+                <div class="question" onclick="toggleAnswer(3)">
+                    4. Is parking available?
+                </div>
+                <div class="answer">
+                    Yes, free parking is available for all car rental customers.
+                </div>
+            </div>
+
+            <div class="faq">
+                <div class="question" onclick="toggleAnswer(4)">
+                    5. Where are you located?
+                </div>
+                <div class="answer">
+                    StreetTalks Cars Hub is located at 123 Main Street, SBR Road, Ahmedabad.
+                </div>
+            </div>
+
+        </div>
+        <div id="footer">
+        </div>
+
+        <script src="main.js"></script>
+        <script>
+            function toggleAnswer(index) {
+                const faqItems = document.getElementsByClassName('faq');
+                const item = faqItems[index];
+                if (!item) return;
+                item.classList.toggle('active');
+            }
+        </script>
+
+</body>
+
+</html>
